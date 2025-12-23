@@ -1,68 +1,28 @@
-import React, { useRef, useEffect } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
 import "../styles/contact.css";
 
 function Contact() {
-  const form = useRef();
-
-  // Initialize EmailJS with your Public Key
-  useEffect(() => {
-    emailjs.init("GWChJSdVJ8cTE0EPY");
-  }, []);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_zyr1kzc",     // Fixed spelling: added 'r' to service
-        "template_foeow8p",    // Your Template ID
-        form.current,
-        "GWChJSdVJ8cTE0EPY"     // Your Public Key
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully! ✅");
-          e.target.reset();
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("Failed to send message: " + error.text);
-        }
-      );
-  };
-
   return (
     <section id="contact" className="contact">
-      <div className="contact-container">
-        <h2>Contact Me</h2>
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <div className="form-row">
-            <input
-              type="text"
-              name="firstName" /* Matches {{firstName}} in dashboard */
-              placeholder="First Name"
-              required
-            />
-            <input
-              type="text"
-              name="lastName" /* Matches {{lastName}} in dashboard */
-              placeholder="Last Name"
-              required
-            />
+      <div className="contact-content">
+        <h2 className="contact-title">Contact me</h2>
+        <p className="contact-subtitle">Get In Touch</p>
+
+        {/* The glass container remains for style, but inputs are gone */}
+        <div className="contact-card">
+          <div className="contact-info-item">
+            <span className="info-label">Email Me :</span>
+            <a href="mailto:kuradere21@gmail.com" className="info-value">
+              kuradere21@gmail.com</a>
           </div>
 
-          <textarea
-            name="message" /* Matches {{message}} in dashboard */
-            rows="5"
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <button type="submit" className="contact-btn">
-            Send Message
-          </button>
-        </form>
+          <div className="contact-info-item">
+            <span className="info-label">Call Me :</span>
+            <a href="tel:+251945297077" className="info-value">
+              +251 945297077
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
