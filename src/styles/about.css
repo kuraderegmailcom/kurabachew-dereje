@@ -1,0 +1,57 @@
+.about {
+  position: relative;
+  padding: 250px 50px;
+  background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), 
+              url("../assets/about.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+/* Dark overlay for readability */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.about h2,
+.about p {
+  position: relative;
+  z-index: 1;
+  
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2.2rem;
+  
+}
+
+.about p {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #e5e9f7;
+  text-align: center;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 20px;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+  }
+}

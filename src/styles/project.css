@@ -1,0 +1,124 @@
+/* Project Section Container */
+.project {
+  position: relative;
+  /* MOVED UP: Reduced top padding from 100px to 40px */
+  padding: 40px 40px 100px 40px; 
+  min-height: 100vh;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), 
+              url("../assets/projects.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; 
+  
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project h2 {
+  text-align: center;
+  /* MOVED UP: Reduced margin-bottom to pull cards closer to title */
+  margin-bottom: 30px; 
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8); 
+  
+  /* Shifts the heading up one step */
+  transform: translateY(-100px);
+}
+
+/* Project grid - 4 in 1 row */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+  /* Shifts the entire list up one step */
+  transform: translateY(-20px);
+}
+
+/* 🟥 PROJECT CARD - Updated from Oval to Rectangle */
+.project-card {
+  padding: 30px 20px;
+  background: rgba(94, 23, 224, 0.3); 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* UPDATED: Changed from 120px (Oval) to 12px (Rectangle) */
+  border-radius: 30px; 
+  
+  text-align: center;
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating animation when hovering */
+.project-card:hover {
+  transform: translateY(-30px); /* Moves up higher on hover */
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Inside Button - Kept as is, but ensured it looks good in a rectangle card */
+.project-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #172328;
+  color: #38bdf8;
+  text-decoration: none;
+  border-radius: 50px; /* Kept the inside button oval as per your request */
+  font-size: 0.85rem;
+  font-weight: bold;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #38bdf8;
+  color: #000;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* 📱 Responsiveness */
+@media (max-width: 1200px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    padding-top: 20px;
+  }
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    /* Slightly rounded rectangle for mobile */
+    border-radius: 12px; 
+    padding: 40px 20px;
+  }
+}

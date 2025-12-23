@@ -1,0 +1,58 @@
+/* Navbar container */
+.navbar {
+  position: justify;
+  top: 0;
+  width: 95%;
+  height: 70px;
+  background-color: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+/* Logo / Name */
+.navbar h2 {
+  color: #38bdf8;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Nav links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #38bdf8;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #020617;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+  }
+}
