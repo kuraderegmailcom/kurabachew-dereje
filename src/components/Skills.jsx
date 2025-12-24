@@ -1,7 +1,7 @@
 import "../styles/skills.css";
 
 import htmlIcon from "../assets/html.png";
-import cssIcon from "../assets/css.png";
+import cssIcon from "../assets/CSS.png";
 import jsIcon from "../assets/js.png";
 import reactIcon from "../assets/react.png";
 import nodeIcon from "../assets/node.png";
@@ -21,7 +21,7 @@ function Skills() {
     <section id="skills" className="skills">
       <div className="skills-header">
         <h2>My Skills</h2>
-        <p>Click a skill to view my verified certificate</p>
+        <p></p>
       </div>
 
       <div className="skill-list">
